@@ -1,0 +1,21 @@
+<div class="header">
+  <span>Inicio</span>
+  <button class="profile-button" (click)="toggleProfile()">Perfil</button>
+</div>
+<div class="welcome-section">
+  <div class="welcome-image">
+    <img src="../../../assets/logo.png" alt="Bienvenido">
+  </div>
+  <div class="welcome-text">
+    <h1>AMIRA: CONECTANDO CON TU BIENESTAR</h1>
+    <p>
+      Este sistema ofrece un pre-diagnóstico basado en tus respuestas. No es un diagnóstico oficial y no reemplaza la consulta con un profesional de la salud mental.
+    </p>
+    <button (click)="startConversation()">Iniciar conversación</button>
+  </div>
+</div>
+
+<div class="profile-sidebar" [class.open]="profileOpen">
+  <app-perfil></app-perfil>
+</div>
+<div class="overlay" *ngIf="profileOpen" (click)="toggleProfile()"></div>

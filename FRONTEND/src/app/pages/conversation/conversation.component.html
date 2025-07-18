@@ -1,0 +1,16 @@
+<div class="header">
+  <button (click)="goBack()">Atrás</button>
+  <span>Inicio de conversación</span>
+</div>
+<div class="conversation-section">
+  <div class="chat">
+    <div *ngFor="let message of messages" [ngClass]="{'from-amira': !message.user, 'from-user': message.user}">
+      <p>{{ message.text }}</p>
+    </div>
+  </div>
+  <div class="message-input">
+    <input type="text" [(ngModel)]="userInput" placeholder="Mensaje" (keyup.enter)="sendMessage()">
+    <button (click)="sendMessage()">Enviar</button>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>

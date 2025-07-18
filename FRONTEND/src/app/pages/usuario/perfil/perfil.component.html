@@ -1,0 +1,26 @@
+<div *ngIf="usuario">
+  <h2>Perfil de {{ usuario.nombre }} {{ usuario.apellido }}</h2>
+  <div class="profile-picture">
+    <img [src]="profileImage || '../../../../assets/logo.png'" alt="Foto de perfil">
+    <label for="file-upload" class="custom-file-upload">
+      Seleccionar archivo
+    </label>
+    <input id="file-upload" type="file" (change)="onFileSelected($event)">
+  </div>
+  <p>Cédula: {{ usuario.cedula }}</p>
+  <p>Correo: {{ usuario.correo }}</p>
+  <p>Rol: {{ usuario.rol }}</p>
+  <p *ngIf="usuario.rol === 'cliente'">Depresión: {{ usuario.depresion }}</p>
+  <p *ngIf="usuario.rol === 'cliente'">Ansiedad: {{ usuario.ansiedad }}</p>
+  <p *ngIf="usuario.rol === 'cliente'">Estrés: {{ usuario.estres }}</p>
+
+  <div *ngIf="esPsicologo && estadisticas">
+    <h3>Estadísticas de Clientes</h3>
+    <p>Total de clientes: {{ estadisticas.totalClientes }}</p>
+    <p>Clientes con depresión: {{ estadisticas.depresion }}</p>
+    <p>Clientes con ansiedad: {{ estadisticas.ansiedad }}</p>
+    <p>Clientes con estrés: {{ estadisticas.estres }}</p>
+  </div>
+
+  <button (click)="logout()">Cerrar sesión</button>
+</div>

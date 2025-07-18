@@ -1,0 +1,88 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #a8d5a2;
+  padding: 10px;
+  text-align: left;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-picture input {
+  display: none;
+}
+
+.profile-picture label {
+  background-color: #a8d5a2;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-picture .accept-button {
+  background-color: #a8d5a2;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #a8d5a2;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #8bbf91;
+}
+
+p {
+  color: #5a5a5a;
+}
+
+h2, h3 {
+  color: #5a5a5a;
+}
+
+@media (max-width: 768px) {
+  :host {
+      padding: 5px;
+      font-size: 1rem;
+  }
+
+  .profile-picture img {
+      width: 80px;
+      height: 80px;
+  }
+
+  button {
+      padding: 8px 16px;
+      font-size: 0.875rem;
+  }
+}
